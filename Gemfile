@@ -1,10 +1,16 @@
 source 'https://rubygems.org'
 
-gem "rack"
-gem "sinatra"
-gem "activesupport"
+gem 'sinatra', require: 'sinatra/base'
+gem 'sinatra-contrib', require: 'sinatra/reloader'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'faraday'
+gem 'figaro'
 
-group :test do
-  gem "rspec"
-  gem "rack-test"
+group :development, :test do
+  gem 'pry'
+  gem 'rspec'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov'
 end
