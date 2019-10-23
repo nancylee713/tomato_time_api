@@ -6,10 +6,12 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'faraday'
 gem 'figaro'
+gem 'pg'
 
 group :development, :test do
   gem 'pry'
   gem 'rspec'
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
