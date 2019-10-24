@@ -1,8 +1,8 @@
 require 'bundler'
-gem 'rack'
-Bundler.require
-
+require './app'
 require File.expand_path('../config/environment',  __FILE__)
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-
+Bundler.require
+run Sinatra::Application
 run TomatoApi
+
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
