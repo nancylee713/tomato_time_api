@@ -1,4 +1,5 @@
 require 'spec_helper'
+#run command: rake db:migrate RACK_ENV=test before you exec rspec
 
 RSpec.describe Question, type: :model do
   describe "validations" do
@@ -6,5 +7,6 @@ RSpec.describe Question, type: :model do
     it { should validate_presence_of :difficulty }
     it { should validate_presence_of :question }
     it { should validate_presence_of :correct_answer }
+    it { should validate_presence_of :options }
   end
 end
