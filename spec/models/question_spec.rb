@@ -1,4 +1,5 @@
 require 'spec_helper'
+#run command: rake db:migrate RACK_ENV=test before you exec rspec
 
 RSpec.describe Question, type: :model do
   describe "validations" do
