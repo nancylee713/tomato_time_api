@@ -27,7 +27,7 @@ class ApiPresenter
         final = q_arr
         all_q = []
         all_q << final
-        binding.pry
+        # binding.pry
       end #end each
   end #end each
 end#end method
