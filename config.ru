@@ -3,4 +3,5 @@ Bundler.require
 
 require File.expand_path('../config/environment',  __FILE__)
 
-run TomatoApi
+require './app/controllers/tomato_time_api'
+run TomatoTimeApi
