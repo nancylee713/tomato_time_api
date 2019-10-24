@@ -5,6 +5,7 @@ cache: bundler
 services:
   - postgresql
 before_script:
+- bundle exec rake db:reset
 - psql -c 'create database travis_ci_test;' -U postgres
 script:
   - bundle exec rspec
