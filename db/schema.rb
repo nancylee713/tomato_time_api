@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(version: 2019_10_23_211557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "games", force: :cascade do |t|
-    t.string "name"
+  create_table "questions", force: :cascade do |t|
     t.string "category"
     t.string "difficulty"
-    t.integer "questions_count"
+    t.string "question"
+    t.string "correct_answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
