@@ -1,13 +1,14 @@
 test:
   adapter: postgresql
   encoding: unicode
-  database: tomato_time_api
+  database: tomato_time_api_test
 
 development:
   adapter: postgresql
   encoding: unicode
-  database: tomato_time_api
+  database: tomato_time_api_development
 
 production:
   adapter: postgresql
   encoding: unicode
+  database: tomato_time_api
