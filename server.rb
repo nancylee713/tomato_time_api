@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'sinatra'
 require 'sinatra/namespace'
 require 'sinatra/activerecord'
