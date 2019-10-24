@@ -5,6 +5,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.string :difficulty
       t.string :question
       t.string :correct_answer
+      t.text :options, array: true, default: []
 
       t.timestamps
     end

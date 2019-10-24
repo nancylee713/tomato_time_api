@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_211557) do
     t.string "difficulty"
     t.string "question"
     t.string "correct_answer"
+    t.text "options", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
