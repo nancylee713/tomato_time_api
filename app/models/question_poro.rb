@@ -1,10 +1,3 @@
-require 'faraday'
-require 'pry'
-require 'json'
-require 'pp'
-require './app/serializers/question_serializer'
-# require './app/services/trivia'
-
 class QuestionPoro
   attr_reader :category, :difficulty, :question, :correct_answer, :options
 
@@ -15,8 +8,4 @@ class QuestionPoro
     @correct_answer = question_data['correct_answer']
     @options = question_data['incorrect_answers'] << @correct_answer
   end
-
-
-
-
 end

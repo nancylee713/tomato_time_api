@@ -11,7 +11,7 @@ SimpleCov.start
 require 'rspec'
 require 'shoulda-matchers'
 require 'capybara/dsl'
-Capybara.app = TomatoApi
+Capybara.app = TomatoTimeApi
 Capybara.save_path = 'tmp/capybara'
 
 DatabaseCleaner.strategy = :truncation
