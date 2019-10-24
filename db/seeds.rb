@@ -1,6 +1,5 @@
 require './app/models/question'
 require './app/models/question_poro'
-require 'rubygems'
 
 
 question_1 = Question.create(category: 10, difficulty: 'easy', question: 'test', correct_answer: 'answer', options: 'incorrect, incorrect, incorrect')
