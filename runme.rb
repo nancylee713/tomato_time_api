@@ -22,6 +22,11 @@ pp questions
 
 questions.each do |hash|
   poro = QuestionPoro.new(hash)
-  binding.pry
-  Question.create(category: poro.category)
+  Question.create(
+    category: poro.category,
+    difficulty: poro.difficulty,
+    question: poro.question,
+    correct_answer: poro.correct_answer,
+    options: poro.options
+  )
 end

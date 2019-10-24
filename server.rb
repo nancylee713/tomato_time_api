@@ -2,9 +2,30 @@ require 'sinatra'
 require 'sinatra/namespace'
 require 'sinatra/activerecord'
 require 'pg'
+require './app/services/trivia_api_service'
+require './app/models/api_presenter'
+require './app/models/question_poro'
 require './app/models/question'
 require 'pry'
 
+
+# Consume API
+triv_api =  TriviaApiService.new
+questions = triv_api.service(3,10,"easy")
+
+
+# Make PORO out of raw data and load to db
+questions.each do |hash|
+  poro = QuestionPoro.new(hash)
+
+  Question.create(
+    category: poro.category,
+    difficulty: poro.difficulty,
+    question: poro.question,
+    correct_answer: poro.correct_answer,
+    options: poro.options
+  )
+end
 
 # Endpoints
 get '/ ' do
