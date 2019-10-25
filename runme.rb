@@ -1,5 +1,4 @@
 require 'faraday'
-require 'pry'
 require 'json'
 require 'pp'
 require './app/services/trivia_api_service'
