@@ -1,11 +1,14 @@
 language: ruby
 rvm:
-  - 2.6.3
+- 2.6.3
 cache: bundler
 services:
-  - postgresql
+- postgresql
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 script:
-  - bundle exec rake db:reset
-  - bundle exec rspec
+- bundle exec rake db:reset
+- bundle exec rspec
+deploy:
+  api_key:
+    secure: ESio6YQKEGfiK6lsycEhxGFjfw1K8KapNj8ls4RcZfyjhhl1I9xM0cMvJtnOD5s9LjoKQBaDIwEI3rij+QWe2uey3isHL8KtfoVPRbLtbJgOqd1oSkMA0di+wzxXWvZ4+6r35Hl9mawAks+w/Zsvq+CFk4vN6OdCmA0TNkV4kV8/LZAN9rY/dFRjwjYZcRUwEWzDbpod7+qHCXFPeVMJttr51HWITMU/FRNPErHeSW/Yk34YgvPDNmQRlZYG6Ch3fC9hHpkjFXNu/fifj7XjdZ8NE7S2fqDMbngHIK2JNuI67JBAztkdZWWUC0w4ZNhqPQbQb84Ef+xtXpSbqiscslz/DJA3oIb0oxuBM2NpAC7q2QCXG28sT8/nN/sNR+pIs0yS1LuDp5zOy8Kc0q5KXRssKhSejzZtZ4gmF9/+C3xa7qcLwfyfWqyE1SsTJ0GpcCRPPun0X3pi51STZnoD9BXRYNpMvXOs+gbEDat50YJLV0fhzL9uKoeI/zA/sBklAd1natnT57ClPG6xEIuN8H04BhkXlok7N6rwH8I7kLsFtGAZSGr3LVgy8nRyk3DqJbt90/jLB2mqkRmPut4UV4BZCZOtzeUibHzMKwB/jlRdzHVlwRiKFCh0+T2JViRuzuferp4O+c9/y50R5BYQAd/Z2yIhBmlRCSD0yxRl6/I=
