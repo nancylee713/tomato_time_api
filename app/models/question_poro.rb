@@ -2,10 +2,10 @@ class QuestionPoro
   attr_reader :category, :difficulty, :question, :correct_answer, :options
 
   def initialize(question_data)
-    @category = question_data['category']
-    @difficulty = question_data['difficulty']
-    @question = question_data['question']
-    @correct_answer = question_data['correct_answer']
-    @options = question_data['incorrect_answers'] << @correct_answer
+    @category = question_data[:category]
+    @difficulty = question_data[:difficulty]
+    @question = question_data[:question]
+    @correct_answer = question_data[:correct_answer]
+    @options = question_data[:incorrect_answers] << @correct_answer
   end
 end
