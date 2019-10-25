@@ -1,12 +1,15 @@
 require 'sinatra/namespace'
 require './app/facades/question_facade'
+require './app/models/question'
+require 'json'
 require 'pry'
 
 class TomatoTimeApi < Sinatra::Base
   register Sinatra::Namespace
 
-  get '/ ' do
-    'Welcome to Tomato Time Trivia!'
+  get '/' do
+    content_type :html
+    send_file './app/public/index.html'
   end
 
   namespace '/api/v1' do
