@@ -1,4 +1,7 @@
 require 'bundler'
+require 'rubygems'
+require 'sinatra'
+require './web'
 Bundler.require
 
 require File.expand_path('../config/environment',  __FILE__)
