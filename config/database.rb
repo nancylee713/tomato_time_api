@@ -26,6 +26,7 @@
 # 	)
 # end
 
+require 'sinatra'
 require 'bundler/setup'
 Bundler.require
 
