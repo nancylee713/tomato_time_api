@@ -21,8 +21,4 @@ class QuestionPoro
 
     data
   end
-
-  def question_clean
-
-  end
 end

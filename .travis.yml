@@ -8,6 +8,7 @@ before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 script:
 - bundle exec rake db:reset
+- bundle exec rake import:all
 - bundle exec rspec
 deploy:
   provider: heroku:git
