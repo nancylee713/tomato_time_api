@@ -1,5 +1,4 @@
 require 'sinatra/namespace'
-require './app/facades/question_facade'
 require './app/models/question'
 require 'json'
 require './config/environment'
@@ -18,8 +17,6 @@ class TomatoTimeApi < Sinatra::Base
     end
 
     get '/questions' do
-      input = {question_amount: 3, category: 10, difficulty: 'easy'}
-      QuestionFacade.new(input).load_questions
       questions = Question.all
 
       [:category, :difficulty, :question].each do |filter|
