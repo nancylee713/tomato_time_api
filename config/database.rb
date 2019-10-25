@@ -1,4 +1,5 @@
 # set the database based on the current environment
+configure :production do
 database_name = "tomato_time_api_#{TomatoTimeApi.environment}"
 db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")
 
@@ -12,3 +13,4 @@ ActiveRecord::Base.establish_connection(
   :database => "#{database_name}",
   :encoding => 'utf8'
 )
+end 
