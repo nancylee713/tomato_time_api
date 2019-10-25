@@ -10,6 +10,12 @@ Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| requir
 # require the model(s)
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
 
+# require services
+Dir.glob(File.join(APP_ROOT, 'app', 'services', '*.rb')).each { |file| require file }
+
+# require facades
+Dir.glob(File.join(APP_ROOT, 'app', 'facades', '*.rb')).each { |file| require file }
+
 # require database configurations
 require File.join(APP_ROOT, 'config', 'database')
 
@@ -19,5 +25,4 @@ class TomatoTimeApi < Sinatra::Base
   set :root, APP_ROOT
   set :views, File.join(APP_ROOT, "app", "views")
   set :public_folder, File.join(APP_ROOT, "app", "public")
-  # set :environment, :production
 end
