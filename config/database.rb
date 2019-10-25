@@ -1,22 +1,59 @@
-configure :development do
-  database_name = "tomato_time_api_#{TomatoTimeApi.environment}"
- set :database, "postgres://localhost/#{database_name}"
- set :show_exceptions, true
+# # set the database based on the current environment
+# database_name = "tomato_time_api_#{TomatoTimeApi.environment}"
+# db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")
+#
+# # connect ActiveRecord with the current database
+# ActiveRecord::Base.establish_connection(
+#   :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+#   :host     => db.host,
+#   :port     => db.port,
+#   :username => db.user,
+#   :password => db.password,
+#   :database => "#{database_name}",
+#   :encoding => 'utf8'
+# )
+#
+# configure :production, :development do
+# 	db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+#
+# 	ActiveRecord::Base.establish_connection(
+# 			:adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+# 			:host     => db.host,
+# 			:username => db.user,
+# 			:password => db.password,
+# 			:database => db.path[1..-1],
+# 			:encoding => 'utf8'
+# 	)
+# end
+
+require 'bundler/setup'
+Bundler.require
+
+configure :test do
+  ActiveRecord::Base.establish_connection(
+    :adapter => "postgresql",
+    :encoding => "unicode",
+    :database => "tomato_time_api_test"
+  )
 end
 
-# connect ActiveRecord with the current database
-configure :production do
-# set the database based on the current environment
-  database_name = "tomato_time_api_#{TomatoTimeApi.environment}"
-  db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")
+configure :development do
+  ActiveRecord::Base.establish_connection(
+    :adapter => "postgresql",
+    :encoding => "unicode",
+    :database => "tomato_time_api_development"
+  )
+end
 
- ActiveRecord::Base.establish_connection(
-   :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-   :host     => db.host,
-   :port     => db.port,
-   :username => db.user,
-   :password => db.password,
-   :database => db.path[1..-1],
-   :encoding => 'utf8'
- )
+configure :production do
+  db = URI.parse(ENV['DATABASE_URL'])
+
+  ActiveRecord::Base.establish_connection(
+    :adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+    :host     => db.host,
+    :username => db.user,
+    :password => db.password,
+    :database => db.path[1..-1],
+    :encoding => 'utf8'
+  )
 end

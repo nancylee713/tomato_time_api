@@ -3,7 +3,6 @@ require './app/facades/question_facade'
 require './app/models/question'
 require 'json'
 require './config/environment'
-require './config/database'
 
 class TomatoTimeApi < Sinatra::Base
   register Sinatra::Namespace
