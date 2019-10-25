@@ -12,6 +12,7 @@ gem 'fast_jsonapi'
 
 group :development, :test do
   gem 'shotgun'
+  gem 'pry'
   gem 'tux'
   gem 'rspec'
   gem 'database_cleaner'
