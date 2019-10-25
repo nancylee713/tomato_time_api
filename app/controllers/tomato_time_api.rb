@@ -2,7 +2,6 @@ require 'sinatra/namespace'
 require './app/facades/question_facade'
 require './app/models/question'
 require 'json'
-require 'pry'
 
 class TomatoTimeApi < Sinatra::Base
   register Sinatra::Namespace

@@ -1,6 +1,5 @@
 require 'faraday'
 require 'json'
-require 'pry'
 
 class TriviaApiService
   def service(question_amount,category,difficulty)
