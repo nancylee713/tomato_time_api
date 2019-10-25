@@ -17,4 +17,5 @@ deploy:
   app: tomato-time-api
   on:
     repo: nancylee713/tomato_time_api
-  run: rake db:migrate
+  run:
+    - rake db:migrate RACK_ENV=production
