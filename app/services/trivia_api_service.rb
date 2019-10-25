@@ -2,9 +2,16 @@ require 'faraday'
 require 'json'
 
 class TriviaApiService
-  def service(question_amount,category,difficulty)
-    response = Faraday.get("https://opentdb.com/api.php?amount=#{question_amount}&category=#{category}&difficulty=#{difficulty}&type=multiple")
-    raw_data = response.body
-    parsed_raw_data = JSON.parse(raw_data)["results"]
+  def self.get_questions(amount:, category:)
+    new.get_questions(amount, category)
+  end
+
+  def get_questions(amount, category)
+    response = Faraday.get 'https://opentdb.com/api.php/', {
+      amount: amount,
+      category: category,
+      type: 'multiple'
+    }
+    json = JSON.parse(response.body, symbolize_names: true)[:results]
   end
 end
