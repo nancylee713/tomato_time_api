@@ -1,4 +1,3 @@
-require 'pry'
 class QuestionPoro
   attr_reader :category, :difficulty, :question, :correct_answer, :options
 
@@ -21,5 +20,9 @@ class QuestionPoro
     end
 
     data
+  end
+
+  def question_clean
+
   end
 end
