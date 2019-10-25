@@ -9,6 +9,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'pg'
 gem 'fast_jsonapi'
+gem 'colorize'
 
 group :test do
   gem 'rack-test', require: false
@@ -25,5 +26,4 @@ group :development, :test do
   gem 'simplecov'
   gem 'rack-test'
   gem "shoulda-matchers", "~> 2.4.0", require: false
-  gem 'colorize'
 end
