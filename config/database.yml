@@ -12,3 +12,4 @@ production:
   adapter: postgresql
   encoding: unicode
   database: tomato_time_api
+  url: <%= ENV['DATABASE_URL'] %>
