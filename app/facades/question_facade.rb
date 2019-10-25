@@ -4,14 +4,12 @@ require './app/models/question_poro'
 class QuestionFacade
 
   def initialize(input)
-    @question_amount = input[:question_amount]
+    @question_amount = input[:amount]
     @category = input[:category]
-    @difficulty = input[:difficulty]
   end
 
   def raw_data
-    triv_api =  TriviaApiService.new
-    triv_api.service(@question_amount, @category, @difficulty)
+    triv_api = TriviaApiService.get_questions(amount: @question_amount, category: @category)
   end
 
   def load_questions
