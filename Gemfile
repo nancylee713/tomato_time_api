@@ -10,6 +10,10 @@ gem 'figaro'
 gem 'pg'
 gem 'fast_jsonapi'
 
+group :test do
+  gem 'rack-test', require: false
+end
+
 group :development, :test do
   gem 'shotgun'
   gem 'tux'
@@ -21,4 +25,5 @@ group :development, :test do
   gem 'simplecov'
   gem 'rack-test'
   gem "shoulda-matchers", "~> 2.4.0", require: false
+  gem 'colorize'
 end

@@ -1,3 +1,4 @@
+require './config/database'
 
 class Question < ActiveRecord::Base
   validates_presence_of :category, :difficulty, :question, :correct_answer, :options
