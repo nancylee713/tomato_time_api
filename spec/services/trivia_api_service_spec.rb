@@ -10,9 +10,9 @@ RSpec.describe TriviaApiService do
 
   it "#get_questions_by_category" do
     json_response =  File.open("./app/fixtures/sports_question_api_call.json")
-    # binding.pry
-    WebMock.stub_request(:get, 'https://opentdb.com/api.php?amount=3&category=21&difficulty=easy&type=multiple').to_return(status: 200, body: json_response)
-
+    binding.pry
+    WebMock.stub_request(:get, 'https://opentdb.com/api.php?amount=3&category=21&difficulty=easy&type=multiple').
+      to_return(status: 200, body: json_response)
     # trivia_api_service = TriviaApiService.new
     # data = trivia_api_service.get_questions(2, "History")
     #
