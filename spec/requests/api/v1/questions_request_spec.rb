@@ -4,7 +4,7 @@ describe "TomatoTime API" do
   it "says hello world" do
     get '/'
     expect(last_response).to be_ok
-    expect(last_response.body).to include('Hello world!')
+    expect(last_response.body).to include('Welcome to Tomato Time API!')
   end
 
   it "sends a list of questions" do
