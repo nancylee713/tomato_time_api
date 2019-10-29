@@ -30,4 +30,5 @@ group :development, :test do
   gem 'simplecov'
   gem 'rack-test'
   gem "shoulda-matchers", "~> 2.4.0", require: false
+  gem 'factory_girl_rails'
 end
