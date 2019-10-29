@@ -48,4 +48,15 @@ describe "TomatoTime API" do
     expect(questions.count).to eq(2)
     expect(questions.first['category']).to eq('History')
   end
+
+  it "can get questions by amount" do
+    create_list(:question, 10)
+
+    get "/api/v1/questions?amount=2"
+
+    questions = JSON.parse(last_response.body)
+
+    expect(last_response).to be_ok
+    expect(questions.count).to eq(2)
+  end
 end
