@@ -2,9 +2,84 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>TomatoTimeApi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <p>Hello world!</p>
+    <div class="container">
+      <br>
+      <p class='display-2'>Welcome to Tomato Time API!</p>
+      <hr>
+      <section class="container">
+        <p><strong>Introduction</strong></p>
+        <p>This is the documentation for version 1 (V1) of the Tomato Time API, created by
+          <a href="https://github.com/joshsherwood1">Joshua Sherwood</a>,
+          <a href="https://github.com/MackHalliday">Mack Halliday</a>,
+          <a href="https://github.com/scottzero">Scott Payton</a>, and
+          <a href="https://github.com/nancylee713">Nancy Lee</a>
+          </p>
+
+        <p><strong>Response Formats</strong></p>
+        <p>The default response format is JSON application/json.</p>
+
+        <p><strong>Authentication</strong></p>
+        <p>The API is open to public. Feel free to create fun games with it!</p>
+
+        <p><strong>All Routes</strong></p>
+        <p>All routes need to be prefixed with <code>https://peaceful-chamber-62417.herokuapp.com/api/v1/questions</code></p>
+
+        <p><strong>URL Query Parameters</strong></p>
+
+        <table class="table table-bordered">
+              <thead class="thead-light">
+                <tr>
+                  <th style="width: 20%;">Param</th>
+                  <th>Type</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code>category</code>
+                  </td>
+                  <td>
+                    <em>string</em>
+                  </td>
+                  <td>
+                    Valid categories:
+                    General Knowledge,
+                    Entertainment: Books,
+                    Entertainment: Film,
+                    Entertainment: Television,
+                    Entertainment: Music,
+                    Science & Nature,
+                    Geography
+                    History
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>difficulty</code>
+                  </td>
+                  <td>
+                    <em>string</em>
+                  </td>
+                  <td>Valid levels: Easy, Medium, Hard </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>amount</code>
+                  </td>
+                  <td>
+                    <em>number</em>
+                  </td>
+                  <td>Limit to 50 per request</td>
+                </tr>
+
+              </tbody>
+            </table>
+      </section>
+    </div>
   </body>
 </html>
