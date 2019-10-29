@@ -8,16 +8,39 @@ require File.expand_path('../../config/environment.rb', __FILE__)
 require 'simplecov'
 SimpleCov.start
 
+# Load the sinatra app
+require './app/controllers/tomato_time_api'
+
+# Load the request helper
+require './spec/support/trivia_helpers.rb'
+
+# Require test libraries
+require 'minitest/autorun'
+require 'minitest/pride'
+require 'minitest/spec'
+require 'mocha/setup'
+require 'rack/test'
+require 'pry'
+
 require 'rspec'
 require 'shoulda-matchers'
 require 'capybara/dsl'
+
 Capybara.app = TomatoTimeApi
 Capybara.save_path = 'tmp/capybara'
 
 DatabaseCleaner.strategy = :truncation
 
+# RSpec Mixin
+module RSpecMixin
+  include Rack::Test::Methods
+  def app() TomatoTimeApi end
+end
+
 # within the RSpec configuration (this is the same place you have your database cleaner options set):
 RSpec.configure do |c|
+  c.include RSpecMixin
+
   c.include Capybara::DSL
 
   c.before(:all) do
