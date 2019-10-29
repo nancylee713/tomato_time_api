@@ -25,6 +25,8 @@ require 'pry'
 require 'rspec'
 require 'shoulda-matchers'
 require 'capybara/dsl'
+require 'factory_girl_rails'
+
 
 Capybara.app = TomatoTimeApi
 Capybara.save_path = 'tmp/capybara'
@@ -39,6 +41,12 @@ end
 
 # within the RSpec configuration (this is the same place you have your database cleaner options set):
 RSpec.configure do |c|
+  c.include FactoryGirl::Syntax::Methods
+
+  c.before(:all) do
+    FactoryGirl.reload
+  end
+
   c.include RSpecMixin
 
   c.include Capybara::DSL
