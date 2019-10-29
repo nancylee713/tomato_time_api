@@ -1,7 +1,7 @@
 require './spec/spec_helper'
-require './app/services/trivia_api_service'
 
 RSpec.describe TriviaApiService do
+
   it "can be instantiated" do
     trivia_api_service = TriviaApiService.new
 
@@ -10,7 +10,8 @@ RSpec.describe TriviaApiService do
 
   it "#get_questions_by_category" do
     trivia_api_service = TriviaApiService.new
-    data = trivia_api_service.get_questions(2, "History")
+
+    data = trivia_api_service.get_questions("2", "20")
 
     expect(data).to be_a Array
     expect(data.count).to eq 2
