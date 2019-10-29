@@ -12,11 +12,7 @@ gem 'fast_jsonapi'
 gem 'colorize'
 
 group :test do
-  gem 'multi_json'
-  gem 'mocha', '~> 0.14.0', require: false
-  gem 'minitest'
   gem 'rack-test', require: false
-  gem 'test-unit'
 end
 
 group :development, :test do
