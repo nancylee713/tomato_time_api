@@ -6,4 +6,5 @@ class Question < ActiveRecord::Base
   scope :category, -> (category) { where(category: category) }
   scope :difficulty, -> (difficulty) { where(difficulty: difficulty) }
   scope :question, -> (question) { where(question: /^#{question}/) }
+  scope :amount, -> (amount) { limit(amount) }
 end

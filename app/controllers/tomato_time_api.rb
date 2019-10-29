@@ -19,7 +19,9 @@ class TomatoTimeApi < Sinatra::Base
     get '/questions' do
       questions = Question.all
 
-      [:category, :difficulty, :question].each do |filter|
+      amount = params['amount']
+
+      [:category, :difficulty, :question, :amount].each do |filter|
         questions = questions.send(filter, params[filter]) if params[filter]
       end
 
