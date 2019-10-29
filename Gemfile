@@ -17,6 +17,7 @@ group :test do
   gem 'minitest'
   gem 'rack-test', require: false
   gem 'test-unit'
+  gem 'webmock'
 end
 
 group :development, :test do

@@ -1,0 +1,41 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Sports",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which team won the 2015-16 English Premier League?",
+            "correct_answer": "Leicester City",
+            "incorrect_answers": [
+                "Liverpool",
+                "Cheslea",
+                "Manchester United"
+            ]
+        },
+        {
+            "category": "Sports",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which country will host the 2020 Summer Olympics?",
+            "correct_answer": "Japan",
+            "incorrect_answers": [
+                "China",
+                "Australia",
+                "Germany"
+            ]
+        },
+        {
+            "category": "Sports",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What is the most common type of pitch thrown by pitchers in baseball?",
+            "correct_answer": "Fastball",
+            "incorrect_answers": [
+                "Slowball",
+                "Screwball",
+                "Palmball"
+            ]
+        }
+    ]
+}

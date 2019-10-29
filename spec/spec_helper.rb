@@ -21,6 +21,7 @@ require 'minitest/spec'
 require 'mocha/setup'
 require 'rack/test'
 require 'pry'
+require 'webmock'
 
 require 'rspec'
 require 'shoulda-matchers'
