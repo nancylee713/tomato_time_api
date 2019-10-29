@@ -1,6 +1,6 @@
-require './spec/spec_helper'
+require 'spec_helper'
 
-RSpec.describe 'TomatoTimeApi App' do
+RSpec.describe TomatoTimeApi do
   it "says hello world" do
     get '/'
     expect(last_response).to be_ok
@@ -10,5 +10,6 @@ RSpec.describe 'TomatoTimeApi App' do
   it "displays a list of questions" do
     get '/api/v1/questions'
     expect(last_response).to be_ok
+    binding.pry
   end
 end
