@@ -1,1 +1,2 @@
-# tomato_time_api
+# Tomato Time API
+In this project, we built a Sinatra app that consumes an external API and generates RESTful endpoints. The original source of trivias in this API were imported from the Open Trivia Database. The Tomato Time API is designed to be used in conjunction with the quiz app [Tomato Time](https://peaceful-chamber-62417.herokuapp.com/) ([github repo](https://github.com/joshsherwood1/tomato_time_project)). The API doc can be accessed here: https://tomato-time-api.herokuapp.com/
